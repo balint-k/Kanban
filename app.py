@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, redirect, url_for
 from models import Database
 
 app = Flask(__name__)
@@ -13,7 +13,8 @@ def board():
 def add_column():
     name = request.form['name']
     db.add_column(name)
-    return board()
+    return redirect(url_for('board'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
