@@ -13,3 +13,36 @@ header h1 {
   font-size: 2.5em;
   letter-spacing: 2px;
 }
+
+.column {
+  background: #f3d7d7;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  padding: 20px;
+  margin: 0 10px 20px 10px;
+  min-width: 250px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.column h2 {
+  margin-top: 0;
+  font-size: 1.4em;
+  color: #1976d2;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.board .column {
+  flex: 1 1 250px;
+  max-width: 350px;
+}
