@@ -1,4 +1,3 @@
-
 header {
   width: 100vw;
   background: #1976d2;
@@ -45,4 +44,76 @@ header h1 {
 .board .column {
   flex: 1 1 250px;
   max-width: 350px;
+}
+
+/* Plus Button */
+.add-column-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1976d2;
+  color: #fff;
+  font-size: 2em;
+  border: none;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.2s;
+}
+.add-column-btn:hover {
+  background: #1565c0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.3);
+}
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+  position: relative;
+  text-align: center;
+}
+.close {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  font-size: 1.5em;
+  color: #1976d2;
+  cursor: pointer;
+}
+.modal-content input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.modal-content button[type="submit"] {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+.modal-content button[type="submit"]:hover {
+  background: #1565c0;
 }

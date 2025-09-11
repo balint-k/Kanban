@@ -9,6 +9,11 @@ def board():
     columns = db.get_data()
     return render_template('board.html', columns=columns)
 
+@app.route('/add_column', methods=['POST'])
+def add_column():
+    name = request.form['name']
+    db.add_column(name)
+    return board()
 
 if __name__ == '__main__':
     app.run(debug=True)

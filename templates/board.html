@@ -18,8 +18,20 @@
         {% endfor %}
     </div>
 
+    <!-- Plus Button -->
+    <button id="addColumnBtn" class="add-column-btn" title="Add Column">+</button>
 
-  
-
+    <!-- Modal -->
+    <div id="addColumnModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="addColumnForm" method="post" action="/add_column">
+          <label for="columnName">Column Name:</label>
+          <input type="text" id="columnName" name="name" required>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </div>
 </body>
+<script src="{{ url_for('static', filename='modal.js') }}"></script>
 </html>
