@@ -31,15 +31,15 @@ class Database:
             #"""
             #)
 
-    def add_column(self, name):
-        with self.conn:
-            self.conn.execute("INSERT INTO columns (name) VALUES (?)", (name,))
-
-    def get_columns(self):
+    def get_data(self):
         cursor = self.conn.cursor()
         cursor.execute("SELECT * FROM columns")
         data = cursor.fetchall()
         return [Column(id=row[0], name=row[1]) for row in data]
+
+    def add_column(self, name):
+        with self.conn:
+            self.conn.execute("INSERT INTO columns (name) VALUES (?)", (name,))
 
     
     def delete_column(self, column_id):

@@ -6,7 +6,7 @@ db = Database()
 
 @app.route('/')
 def board():
-    columns = db.get_columns()
+    columns = db.get_data()
     return render_template('board.html', columns=columns)
 
 
