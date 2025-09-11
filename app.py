@@ -15,6 +15,11 @@ def add_column():
     db.add_column(name)
     return redirect(url_for('board'))
 
+@app.route('/delete_column', methods=['POST'])
+def delete_column():
+    column_id = request.form['column_id']
+    db.delete_column(column_id)
+    return redirect(url_for('board'))
 
 if __name__ == '__main__':
     app.run(debug=True)

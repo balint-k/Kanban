@@ -12,8 +12,17 @@
     <div class="board">
         {% for column in columns %}
         <div class="column">
-            <h2>{{ column.name }}</h2>
-            
+            <h2>
+                {{ column.name }}
+                <form method="post" action="/delete_column" style="display:inline;">
+                    <input type="hidden" name="column_id" value="{{ column.id }}">
+                    <button type="submit" class="delete-column-btn" title="Delete Column">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;">
+                            <path d="M3 6h18M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6m-6 0V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </h2>
         </div>
         {% endfor %}
     </div>

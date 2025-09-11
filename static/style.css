@@ -22,6 +22,7 @@ header h1 {
   min-width: 250px;
   display: inline-block;
   vertical-align: top;
+  position: relative;
 }
 
 .column h2 {
@@ -116,4 +117,20 @@ header h1 {
 }
 .modal-content button[type="submit"]:hover {
   background: #1565c0;
+}
+
+/* Delete Column Button */
+.delete-column-btn {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  opacity: 0.3;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+.delete-column-btn:hover {
+  opacity: 0.8;
 }
