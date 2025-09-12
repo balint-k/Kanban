@@ -56,8 +56,9 @@ class Database:
                         description=taskRow[2], 
                         column_id=taskRow[3])
                         for taskRow in task if taskRow[3] == row[0]
+                    ]
+                   ) for row in columns
                 ]
-                   ) for row in columns]
         return columns
 
     def add_column(self, name: str):
@@ -77,18 +78,18 @@ class Database:
                 (title, description, column_id)
             )
 
-    def get_tasks(self, column_id):
+    def get_tasks(self, column_id:int):
         cursor = self.conn.cursor()
         cursor.execute("SELECT * FROM tasks WHERE column_id = ?", (column_id,))
         return cursor.fetchall()
     
-    def move_task(self, task_id, new_column_id):
+    def move_task(self, task_id, new_column_id:int):
         with self.conn:
             self.conn.execute(
                 "UPDATE tasks SET column_id = ? WHERE id = ?",
                 (new_column_id, task_id)
             )
 
-    def delete_task(self, task_id):
+    def delete_task(self, task_id:int ):
         with self.conn:
             self.conn.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
