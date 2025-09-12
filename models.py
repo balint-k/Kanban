@@ -68,6 +68,7 @@ class Database:
     def delete_column(self, column_id: int):
         with self.conn:
             self.conn.execute("DELETE FROM columns WHERE id = ?", (column_id,))
+            self.conn.execute("DELETE FROM tasks WHERE column_id = ?", (column_id,))
 
     def add_task(self, title:str, description:str, column_id:int):
         with self.conn:
