@@ -23,6 +23,15 @@
                     </button>
                 </form>
             </h2>
+            <div class="cards">
+                <!-- Cards would go here -->
+                 {% for task in column.tasks %}
+                    <div class="card">
+                        <div class="card-title">{{ task.title }}</div>
+                        <div class="card-description">{{ task.description }}</div>
+                    </div>
+                 {% endfor %}
+            </div>
         </div>
         {% endfor %}
     </div>
@@ -30,7 +39,7 @@
     <!-- Plus Button -->
     <button id="addColumnBtn" class="add-column-btn" title="Add Column">+</button>
 
-    <!-- Modal -->
+    <!-- AddColumnModal -->
     <div id="addColumnModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>

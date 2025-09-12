@@ -134,3 +134,28 @@ header h1 {
 .delete-column-btn:hover {
   opacity: 0.8;
 }
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(25, 118, 210, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+  cursor: grab;
+  opacity: 0.8;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #1976d2;
+}
+
+.card-description {
+  font-size: 0.9em;
+  color: #555;
+}
