@@ -9,6 +9,14 @@ def board():
     columns = db.get_data()
     return render_template('board.html', columns=columns)
 
+@app.route('/add_task', methods=['POST'])
+def add_task():
+    title = request.form['title']
+    description = request.form['description']
+    column_id = request.form['column_id']
+    db.add_task(title, description, column_id)
+    return redirect(url_for('board'))
+
 @app.route('/add_column', methods=['POST'])
 def add_column():
     name = request.form['name']
