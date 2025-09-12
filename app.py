@@ -36,4 +36,4 @@ def delete_column():
     return redirect(url_for('board'))
 
 if __name__ == '__main__':
-    app.run(host="192.168.8.9", port=8001)
+    app.run(host="192.168.8.9", port=8001, debug=True)
