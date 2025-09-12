@@ -17,6 +17,12 @@ def add_task():
     db.add_task(title, description, column_id)
     return redirect(url_for('board'))
 
+@app.route('/delete_task', methods=['POST'])
+def delete_task():
+    task_id = request.form['task_id']
+    db.delete_task(task_id)
+    return redirect(url_for('board'))
+
 @app.route('/add_column', methods=['POST'])
 def add_column():
     name = request.form['name']
