@@ -28,6 +28,20 @@ taskSpan.onclick = function() {
     document.getElementById("taskColumnId").value = "";
 }
 
+function deleteTask(taskId) {
+    if (confirm("Are you sure you want to delete this task?")) {
+        var form = document.createElement("form");
+        form.method = "POST";
+        form.action = "/delete_task";
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "task_id";
+        input.value = taskId;
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    }
+}
 
 function addTask(columnId) {
     taskModal.style.display = "block";
