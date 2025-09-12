@@ -31,6 +31,7 @@
                         <div class="card-description">{{ task.description }}</div>
                     </div>
                  {% endfor %}
+                 <button class="add-task-btn" onclick="addTask({{ column.id }})">+</button>
             </div>
         </div>
         {% endfor %}
@@ -39,17 +40,31 @@
     <!-- Plus Button -->
     <button id="addColumnBtn" class="add-column-btn" title="Add Column">+</button>
 
+    <!-- AddTaskModal-->
+    <div id="addTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeTaskModal">&times;</span>
+            <form id="addTaskForm" method="post" action="/add_task">
+                <input type="text" id="taskTitle" name="title" placeholder="Task Title" required>
+                <textarea id="taskDescription" name="description" placeholder="Description" required></textarea>
+                <button type="submit">Add</button>
+                <input type="hidden" id="taskColumnId" name="column_id">
+            </form>
+        </div>
+    </div>
+    
+
     <!-- AddColumnModal -->
     <div id="addColumnModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="addColumnForm" method="post" action="/add_column">
-          <label for="columnName">Column Name:</label>
-          <input type="text" id="columnName" name="name" required>
-          <button type="submit">Add</button>
-        </form>
-      </div>
+        <div class="modal-content">
+            <span class="close" id="closeColumnModal">&times;</span>
+            <form id="addColumnForm" method="post" action="/add_column">
+                <input type="text" id="columnName" name="name" placeholder="Column name" required>
+                <button type="submit">Add</button>
+            </form>
+        </div>
     </div>
+
 </body>
 <script src="{{ url_for('static', filename='modal.js') }}"></script>
 </html>
