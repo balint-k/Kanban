@@ -135,13 +135,30 @@ header h1 {
   opacity: 0.8;
 }
 
+.delete-task-btn{
+  background: none;
+  border: none;
+  position: inherit;
+  opacity: 0.3;
+  cursor: pointer;
+  padding: 0;
+  float: right;
+  font-size: 1.2em;
+  transition: opacity 0.2s;
+  font: bold;
+}
+
+.delete-task-btn:hover {
+  opacity: 0.8;
+}
+
 .card {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(25, 118, 210, 0.1);
   padding: 15px;
   margin-bottom: 15px;
-  cursor: grab;
+  /* cursor: grab; */
   opacity: 0.8;
 }
 
