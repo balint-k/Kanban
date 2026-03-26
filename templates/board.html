@@ -26,7 +26,7 @@
             <div class="cards">
                 <!-- Cards would go here -->
                  {% for task in column.tasks %}
-                    <div class="card">
+                    <div class="card" draggable="true">
                         <span class="delete-task-btn" title="Delete Task" onclick="deleteTask({{ task.id }})">&times;</span>
                         <div class="card-title">{{ task.title }}</div>
                         <div class="card-description">{{ task.description }}</div>
